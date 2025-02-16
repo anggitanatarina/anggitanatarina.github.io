@@ -36,9 +36,9 @@ body {
 .nav-links li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     padding: 5px 10px;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Great Vibes', cursive;
     transition: 0.3s;
     animation: navMove 3s infinite alternate ease-in-out;
 }
@@ -64,8 +64,8 @@ body {
 
 .star {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     background: white;
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     opacity: 0.8;
@@ -80,10 +80,10 @@ body {
 .text {
     position: absolute;
     bottom: 50px;
-    font-size: 28px;
+    font-size: 32px;
     color: white;
     text-align: center;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Sacramento', cursive;
     font-weight: bold;
     text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
     animation: textMove 3s infinite alternate ease-in-out;
