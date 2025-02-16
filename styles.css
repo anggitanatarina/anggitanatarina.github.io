@@ -71,4 +71,10 @@ body {
     font-family: 'Sacramento', cursive;
     text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
     z-index: 2;
+    animation: textMove 3s infinite alternate ease-in-out;
+}
+
+@keyframes textMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(20px); }
 }
