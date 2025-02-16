@@ -1,33 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+!-- index.html -->
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar with Burger Menu</title>
+    <title>Moon Night</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
-
-    <!-- Navbar -->
     <nav class="navbar">
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#" class="nav-text">✦ Home ✦</a></li>
+            <li><a href="#" class="nav-text">✦ About ✦</a></li>
+            <li><a href="#" class="nav-text">✦ Services ✦</a></li>
+            <li><a href="#" class="nav-text">✦ Contact ✦</a></li>
         </ul>
-        <div class="burger-menu">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
     </nav>
-
-    <div class="content">
-        <h1>Welcome to My Website</h1>
-        <p>Enjoy the aesthetic navigation bar with a smooth burger menu.</p>
-    </div>
-
+    <div class="stars"></div>
+    <div class="text">Terima kasih telah mengunjungi web ini! <br> Silahkan lakukan pencarian Anda.</div>
+    <script src="script.js"></script>
 </body>
 </html>
