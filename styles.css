@@ -1,21 +1,14 @@
-/* styles.css */
 body {
     margin: 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background: url('Vida en la Luna.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     position: relative;
-    animation: zoomBackground 10s infinite alternate ease-in-out;
-}
-
-@keyframes zoomBackground {
-    0% { background-size: 100%; }
-    100% { background-size: 110%; }
 }
 
 .navbar {
@@ -35,28 +28,13 @@ body {
     gap: 20px;
 }
 
-.nav-links li {
-    display: inline;
-}
-
 .nav-links li a {
-    color: black;
+    color: white;
     text-decoration: none;
     font-size: 20px;
     padding: 5px 10px;
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
+    font-family: 'Great Vibes', cursive;
     transition: 0.3s;
-    animation: navMove 3s infinite alternate ease-in-out;
-}
-
-@keyframes navMove {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-5px); }
-}
-
-.nav-links li a:hover {
-    text-decoration: underline;
 }
 
 .stars {
@@ -71,10 +49,10 @@ body {
 
 .star {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     background: white;
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    border-radius: 50%;
     opacity: 0.8;
     animation: moveStar 5s linear infinite;
 }
@@ -90,14 +68,7 @@ body {
     font-size: 32px;
     color: white;
     text-align: center;
-    font-family: 'Great Vibes', cursive;
-    font-weight: bold;
+    font-family: 'Sacramento', cursive;
     text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
-    animation: textMove 3s infinite alternate ease-in-out;
     z-index: 2;
-}
-
-@keyframes textMove {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-10px); }
 }
