@@ -1,13 +1,4 @@
 // script.js
-function toggleMenu() {
-    var menu = document.querySelector('.nav-links');
-    if (menu.style.display === "flex") {
-        menu.style.display = "none";
-    } else {
-        menu.style.display = "flex";
-    }
-}
-
 function createStars() {
     const starsContainer = document.querySelector('.stars');
     for (let i = 0; i < 20; i++) { // Membatasi jumlah bintang
@@ -19,3 +10,5 @@ function createStars() {
         starsContainer.appendChild(star);
     }
 }
+
+document.addEventListener('DOMContentLoaded', createStars);
