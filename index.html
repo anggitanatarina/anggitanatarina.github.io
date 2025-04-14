@@ -1,60 +1,65 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Moon Night</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Sacramento&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon Night</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#" onclick="showSection('home')">home</a></li>
+                <li><a href="#" onclick="showSection('about')">about</a></li>
+                <li><a href="#" onclick="showSection('homework')">homework</a></li>
+                <li><a href="#" onclick="showSection('contact')">contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <ul class="nav-links">
-      <li><a href="#" data-target="home">home</a></li>
-      <li><a href="#" data-target="about">about</a></li>
-      <li><a href="#" data-target="homework">homework</a></li>
-      <li><a href="#" data-target="contact">contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Stars -->
-  <div class="stars">
-    <div class="star" style="top: 10%; left: 15%;"></div>
-    <div class="star" style="top: 25%; left: 30%;"></div>
-    <div class="star" style="top: 40%; left: 55%;"></div>
-    <div class="star" style="top: 60%; left: 70%;"></div>
-    <div class="star" style="top: 80%; left: 90%;"></div>
-  </div>
-
-  <!-- Sections -->
-  <div id="home" class="section active">
-    <div class="text">
-      Thank you for visiting this website! <br> Please proceed with your search.
+    <!-- Stars animation -->
+    <div class="stars">
+        <div class="star" style="top: 10%; left: 15%;"></div>
+        <div class="star" style="top: 25%; left: 30%;"></div>
+        <div class="star" style="top: 40%; left: 55%;"></div>
+        <div class="star" style="top: 60%; left: 70%;"></div>
+        <div class="star" style="top: 80%; left: 90%;"></div>
     </div>
-  </div>
 
-  <div id="about" class="section">
-    <h2>About</h2>
-    <p>Halo, aku selenophile 🌙</p>
-    <p>Mari bersama-sama menyaksikan keindahan bulan di malam hari ✨</p>
-    <p>Have a nice day yaa 🌌</p>
-  </div>
+    <!-- Sections -->
+    <div id="home" class="section">
+        <div class="text">Thank you for visiting this website!<br>Please proceed with your search.</div>
+    </div>
 
-  <div id="homework" class="section">
-    <h2>Tugas UTS</h2>
-    <p>Berikut adalah laporan UTS untuk mata kuliah Sistem Multimedia:</p>
-    <a href="UTS%20Sismul%20Anggita%20Natarina..pdf" target="_blank" class="tugas-button">
-      Buka Laporan UTS
-    </a>
-  </div>
+    <div id="about" class="section hidden">
+        <h2>About</h2>
+        <p>Halo, aku selenophile 🌙</p>
+        <p>Mari bersama-sama menyaksikan keindahan bulan di malam hari ✨</p>
+        <p>Have a nice day yaa 🌌</p>
+    </div>
 
-  <div id="contact" class="section">
-    <h2>Contact</h2>
-    <p>Kamu bisa menghubungiku lewat cahaya bulan 🌕</p>
-  </div>
+    <div id="homework" class="section hidden">
+        <h2>Tugas UTS</h2>
+        <p>Berikut adalah laporan UTS untuk mata kuliah Sistem Multimedia:</p>
+        <a href="UTS Sismul Anggita Natarina..pdf" target="_blank" class="tugas-button">Buka Laporan UTS</a>
+    </div>
 
-  <script src="script.js"></script>
+    <div id="contact" class="section hidden">
+        <h2>Contact</h2>
+        <p>Kamu bisa menghubungiku lewat cahaya bulan 🌕</p>
+    </div>
+
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        // Default: show home
+        showSection('home');
+    </script>
 </body>
 </html>
