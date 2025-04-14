@@ -12,3 +12,21 @@ function createStars() {
 }
 
 document.addEventListener('DOMContentLoaded', createStars);
+const navLinks = document.querySelectorAll('.nav-text');
+const sections = document.querySelectorAll('.section');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = link.getAttribute('data-target');
+
+        // Sembunyikan semua section
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // Tampilkan yang dipilih
+        document.getElementById(target).classList.add('active');
+    });
+});
+
