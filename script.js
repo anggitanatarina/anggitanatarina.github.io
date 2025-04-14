@@ -22,8 +22,23 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const target = link.getAttribute('data-target');
 
+      // Sembunyikan semua section
       sections.forEach(section => section.classList.remove('active'));
-      document.getElementById(target).classList.add('active');
+
+      // Tampilkan section yang diklik
+      const targetSection = document.getElementById(target);
+      if (targetSection) {
+        targetSection.classList.add('active');
+
+        // Kalau section about, reload iframe biar autoplay jalan
+        if (target === 'about') {
+          const iframe = targetSection.querySelector('iframe');
+          if (iframe) {
+            const src = iframe.getAttribute('src');
+            iframe.setAttribute('src', src);
+          }
+        }
+      }
     });
   });
 });
