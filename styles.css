@@ -53,7 +53,7 @@ main {
 
 .section {
   display: none;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 40px;
   background-color: rgba(0,0,0,0.6);
@@ -80,6 +80,7 @@ h1, h2, p {
   margin-top: 1rem;
 }
 
+/* Typewriter */
 .typewriter-text {
   overflow: hidden;
   border-right: 2px solid #fff;
@@ -102,18 +103,18 @@ h1, h2, p {
   50% { border-color: transparent; }
 }
 
-/* 🎥 Video dan Audio Sebaris */
+/* Media Row */
 .media-row {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   margin-top: 2rem;
 }
 
 .video-container,
-.audio-wrapper {
+.audio-container {
   flex: 1 1 300px;
   max-width: 500px;
 }
@@ -136,45 +137,20 @@ h1, h2, p {
   height: 100%;
 }
 
-/* Audio */
-.audio-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+/* Album Cover */
 .album-cover {
   width: 120px;
   height: 120px;
+  margin: 0 auto 1rem;
   border-radius: 50%;
   background-image: url('https://i.scdn.co/image/ab67616d0000b273798ae246bb36ba0b012f1b19');
   background-size: cover;
   background-position: center;
-  margin-bottom: 1rem;
-  box-shadow: 0 0 20px rgba(255,255,255,0.2);
   animation: spin 6s linear infinite;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
-
-.audio-container {
-  position: relative;
-  padding-bottom: 352px;
-  height: 0;
-  overflow: hidden;
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-}
-
-.audio-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
 }
