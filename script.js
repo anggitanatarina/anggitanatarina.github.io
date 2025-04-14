@@ -1,6 +1,6 @@
 function createStars() {
   const starsContainer = document.querySelector('.stars');
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 20; i++) {
     let star = document.createElement('div');
     star.classList.add('star');
     star.style.left = Math.random() * 100 + 'vw';
@@ -18,16 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('.section');
 
   navLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
+    link.addEventListener('click', (e) => {
       e.preventDefault();
-      const target = this.getAttribute('data-target');
+      const target = link.getAttribute('data-target');
 
-      // Set aktif menu
-      navLinks.forEach(l => l.classList.remove('active'));
-      this.classList.add('active');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
 
-      // Tampilkan section sesuai target
-      sections.forEach(section => section.classList.remove('active'));
       document.getElementById(target).classList.add('active');
     });
   });
