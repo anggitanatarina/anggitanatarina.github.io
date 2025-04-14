@@ -122,3 +122,23 @@ h1, h2, p {
   width: 100%;
   height: 100%;
 }
+
+/* 🎵 Spotify Audio Styling */
+.audio-container {
+  position: relative;
+  padding-bottom: 352px; /* tinggi Spotify player */
+  height: 0;
+  overflow: hidden;
+  margin-top: 1em;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.audio-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
