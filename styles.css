@@ -84,3 +84,21 @@ body {
     0% { transform: translateX(0); }
     100% { transform: translateX(20px); }
 }
+/* Homework Link Styling */
+.about a {
+    color: #add8e6;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+
+.about a:hover {
+    color: white;
+    text-shadow: 0 0 10px #add8e6;
+}
+
+/* Optional: Make Homework header glow differently */
+#homework h2 {
+    color: #e0ffff;
+    text-shadow: 0 0 5px #87cefa;
+}
+
