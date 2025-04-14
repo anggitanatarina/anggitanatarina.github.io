@@ -33,11 +33,19 @@
       <p>Halo, aku selenophile 🌙</p>
       <p>Mari bersama-sama menyaksikan keindahan bulan di malam hari ✨</p>
       <p>Have a nice day yaa 🌌</p>
+
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/_K2v-MmAj7E?autoplay=1&mute=1" 
+          title="YouTube video" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
     </section>
 
     <section id="homework" class="section">
-     
-      
       <a href="UTS Sismul Anggita Natarina_.pdf" target="_blank" class="btn">Laporan UTS</a>
     </section>
 
@@ -47,6 +55,34 @@
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    document.querySelectorAll('.nav-text').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('data-target');
+
+        // Sembunyikan semua section
+        document.querySelectorAll('.section').forEach(section => {
+          section.classList.remove('active');
+        });
+
+        // Tampilkan section yang diklik
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.classList.add('active');
+
+          // Reload iframe kalau buka 'about' supaya autoplay jalan
+          if (targetId === 'about') {
+            const iframe = targetSection.querySelector('iframe');
+            if (iframe) {
+              const src = iframe.getAttribute('src');
+              iframe.setAttribute('src', src);
+            }
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
