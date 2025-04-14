@@ -36,25 +36,20 @@
 
       <div class="media-row">
         <!-- Video -->
-        <div class="video-container">
+        <div class="media-box">
           <iframe 
             src="https://www.youtube.com/embed/_K2v-MmAj7E?playlist=_K2v-MmAj7E&loop=1&autoplay=1&mute=1" 
             title="YouTube video" 
-            frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
           </iframe>
         </div>
 
         <!-- Audio -->
-        <div class="audio-container">
+        <div class="media-box">
           <div class="album-cover"></div>
           <iframe 
-            style="border-radius:12px" 
             src="https://open.spotify.com/embed/track/5QDLhrAOJJdNAmCTJ8xMyW?utm_source=generator" 
-            width="100%" 
-            height="152" 
-            frameBorder="0" 
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
             loading="lazy">
           </iframe>
@@ -84,11 +79,11 @@
         if (targetSection) {
           targetSection.classList.add('active');
           if (targetId === 'about') {
-            const iframe = targetSection.querySelector('iframe');
-            if (iframe) {
+            const iframes = targetSection.querySelectorAll('iframe');
+            iframes.forEach(iframe => {
               const src = iframe.getAttribute('src');
               iframe.setAttribute('src', src);
-            }
+            });
           }
         }
       });
