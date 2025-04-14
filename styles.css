@@ -1,74 +1,105 @@
 body {
-    margin: 0;
-    font-family: 'Cursive', sans-serif;
-    color: white;
-    background: url('pexels-njeromin-18124007.jpg') no-repeat center center fixed;
-    background-size: cover;
-    overflow-x: hidden;
+  margin: 0;
+  font-family: 'Cursive', sans-serif;
+  background: url('pexels-njeromin-18124007.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  overflow-x: hidden;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
-    padding: 20px;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 20px;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
 }
 
 .stars {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 .star {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: white;
-    border-radius: 50%;
-    animation: twinkle 4s linear infinite;
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 4s linear infinite;
 }
 
 @keyframes twinkle {
-    0% { opacity: 0; transform: translateY(0); }
-    50% { opacity: 1; }
-    100% { opacity: 0; transform: translateY(100vh); }
+  0% { opacity: 0; transform: translateY(0); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(100vh); }
 }
 
 main {
-    position: relative;
-    z-index: 1;
-    padding: 2rem;
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
 }
 
 .section {
-    display: none;
+  display: none;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 12px;
+  text-align: center;
 }
 
 .section.active {
-    display: block;
+  display: block;
 }
 
 h1, h2, p {
-    text-shadow: 0 0 8px #fff;
+  text-shadow: 0 0 8px #fff;
 }
 
+/* Tombol PDF */
 .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: lightblue;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 10px;
-    margin-top: 1rem;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: lightblue;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+/* Typewriter effect */
+.typewriter-text {
+  overflow: hidden;
+  border-right: 2px solid #fff;
+  white-space: nowrap;
+  width: 0;
+  margin: 0 auto;
+  animation:
+    typing 4s steps(60, end) forwards,
+    blink 0.7s step-end infinite;
+  font-size: 1.8rem;
+  max-width: 100%;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
 }
