@@ -53,7 +53,7 @@ main {
 
 .section {
   display: none;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 40px;
   background-color: rgba(0,0,0,0.6);
@@ -69,7 +69,6 @@ h1, h2, p {
   text-shadow: 0 0 8px #fff;
 }
 
-/* Tombol PDF */
 .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -81,7 +80,6 @@ h1, h2, p {
   margin-top: 1rem;
 }
 
-/* Typewriter effect */
 .typewriter-text {
   overflow: hidden;
   border-right: 2px solid #fff;
@@ -104,13 +102,28 @@ h1, h2, p {
   50% { border-color: transparent; }
 }
 
-/* 🎥 Video Styling */
+/* 🎥 Video dan Audio Sebaris */
+.media-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+.video-container,
+.audio-wrapper {
+  flex: 1 1 300px;
+  max-width: 500px;
+}
+
+/* Video */
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
-  margin-top: 1em;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
@@ -123,13 +136,36 @@ h1, h2, p {
   height: 100%;
 }
 
-/* 🎵 Spotify Audio Styling */
+/* Audio */
+.audio-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.album-cover {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-image: url('https://i.scdn.co/image/ab67616d0000b273798ae246bb36ba0b012f1b19');
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .audio-container {
   position: relative;
-  padding-bottom: 352px; /* tinggi Spotify player */
+  padding-bottom: 352px;
   height: 0;
   overflow: hidden;
-  margin-top: 1em;
+  width: 100%;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
