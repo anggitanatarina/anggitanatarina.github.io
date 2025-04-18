@@ -228,3 +228,63 @@ p {
 .font-blackletter { font-family: "UnifrakturCook", cursive; }
 .font-calligraphy { font-family: "Dancing Script", cursive; }
 .font-comic { font-family: "Comic Sans MS", cursive, sans-serif; }
+/* Font Showcase Layout dengan Box */
+.font-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 4rem;
+  align-items: center;
+}
+
+.font-box {
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  text-align: center;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+  animation: fadeInScale 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+}
+
+.font-label {
+  font-size: 1rem;
+  color: lightblue;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.font-text {
+  font-size: 2rem;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Font Families */
+.font-arial .font-text { font-family: Arial, sans-serif; }
+.font-baskerville .font-text { font-family: "Baskerville", serif; }
+.font-helvetica .font-text { font-family: Helvetica, sans-serif; }
+.font-georgia .font-text { font-family: Georgia, serif; }
+.font-garamond .font-text { font-family: Garamond, serif; }
+.font-caslon .font-text { font-family: "EB Garamond", serif; }
+.font-times .font-text { font-family: "Times New Roman", Times, serif; }
+.font-blackletter .font-text { font-family: "UnifrakturCook", cursive; }
+.font-calligraphy .font-text { font-family: "Dancing Script", cursive; }
+.font-comic .font-text { font-family: "Comic Sans MS", cursive, sans-serif; }
+
+/* Animasi delay tiap box */
+.font-showcase .font-box:nth-child(1) { animation-delay: 0.2s; }
+.font-showcase .font-box:nth-child(2) { animation-delay: 0.4s; }
+.font-showcase .font-box:nth-child(3) { animation-delay: 0.6s; }
+.font-showcase .font-box:nth-child(4) { animation-delay: 0.8s; }
+.font-showcase .font-box:nth-child(5) { animation-delay: 1s; }
+.font-showcase .font-box:nth-child(6) { animation-delay: 1.2s; }
+.font-showcase .font-box:nth-child(7) { animation-delay: 1.4s; }
+.font-showcase .font-box:nth-child(8) { animation-delay: 1.6s; }
+.font-showcase .font-box:nth-child(9) { animation-delay: 1.8s; }
+.font-showcase .font-box:nth-child(10) { animation-delay: 2s; }
+
