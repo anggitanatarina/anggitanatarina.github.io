@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>selenophile</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -25,8 +24,8 @@
 
   <!-- Sections -->
   <main>
-    <section id="home" class="section no-bg active">
-      <h1 class="fancy-text">Thank you for visiting this website! 🌙</h1>
+    <section id="home" class="section active">
+      <h1 class="typewriter-text">Thank you for visiting this website! .</h1>
     </section>
 
     <section id="about" class="section">
@@ -58,22 +57,8 @@
       </div>
     </section>
 
-    <section id="homework" class="section no-bg">
-      <h2 class="fancy-text">Homework</h2>
-
-      <div class="button-container">
-        <button class="sub-btn" data-sub="uts">Laporan UTS</button>
-      </div>
-      <div id="uts" class="sub-content">
-        <a href="UTS Sismul Anggita Natarina_.pdf" target="_blank" class="btn">Lihat Laporan UTS</a>
-      </div>
-
-      <div class="button-container">
-        <button class="sub-btn" data-sub="tugas">Tugas</button>
-      </div>
-      <div id="tugas" class="sub-content">
-        <a href="tugas.html" target="_blank" class="btn">Lihat Tugas</a>
-      </div>
+    <section id="homework" class="section">
+      <a href="UTS Sismul Anggita Natarina_.pdf" target="_blank" class="btn">Laporan UTS</a>
     </section>
 
     <section id="contact" class="section">
@@ -82,6 +67,28 @@
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    document.querySelectorAll('.nav-text').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('data-target');
+        document.querySelectorAll('.section').forEach(section => {
+          section.classList.remove('active');
+        });
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.classList.add('active');
+          if (targetId === 'about') {
+            const iframes = targetSection.querySelectorAll('iframe');
+            iframes.forEach(iframe => {
+              const src = iframe.getAttribute('src');
+              iframe.setAttribute('src', src);
+            });
+          }
+        }
+      });
+    });
+  </script>
+
 </body>
-</html>
+</html> 
