@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = link.getAttribute('data-target');
 
       sections.forEach(section => section.classList.remove('active'));
+
       const targetSection = document.getElementById(target);
       if (targetSection) {
         targetSection.classList.add('active');
@@ -37,10 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.sub-content').forEach(content => {
         content.style.display = 'none';
       });
-      const targetContent = document.getElementById(targetId);
-      if (targetContent) {
-        targetContent.style.display = 'block';
+      const content = document.getElementById(targetId);
+      if (content) {
+        content.style.display = 'block';
       }
     });
+  });
+
+  document.querySelectorAll('.sub-content').forEach(content => {
+    content.style.display = 'none';
   });
 });
