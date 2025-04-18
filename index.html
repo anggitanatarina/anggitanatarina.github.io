@@ -8,6 +8,7 @@
 </head>
 <body>
 
+  <!-- Bintang -->
   <div class="stars"></div>
 
   <!-- Navbar -->
@@ -22,7 +23,7 @@
     </nav>
   </header>
 
-  <!-- Sections -->
+  <!-- Konten -->
   <main>
     <section id="home" class="section active">
       <h1 class="typewriter-text">Thank you for visiting this website! .</h1>
@@ -67,28 +68,7 @@
     </section>
   </main>
 
-  <script>
-    document.querySelectorAll('.nav-text').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('data-target');
-        document.querySelectorAll('.section').forEach(section => {
-          section.classList.remove('active');
-        });
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-          targetSection.classList.add('active');
-          if (targetId === 'about') {
-            const iframes = targetSection.querySelectorAll('iframe');
-            iframes.forEach(iframe => {
-              const src = iframe.getAttribute('src');
-              iframe.setAttribute('src', src);
-            });
-          }
-        }
-      });
-    });
-  </script>
-
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
-</html> 
+</html>
