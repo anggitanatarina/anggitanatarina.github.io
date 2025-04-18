@@ -16,56 +16,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const navLinks = document.querySelectorAll('.nav-text');
   const sections = document.querySelectorAll('.section');
-  const subContents = document.querySelectorAll('.sub-content');
 
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-
-      // Ambil target dari data-target
       const target = link.getAttribute('data-target');
 
-      // Sembunyikan semua section
       sections.forEach(section => section.classList.remove('active'));
-
-      // Tampilkan section yang dipilih
-      const targetSection = document.getElementById(target);
-      if (targetSection) {
-        targetSection.classList.add('active');
-
-        // Reset iframe di bagian about
-        if (target === 'about') {
-          const iframes = targetSection.querySelectorAll('iframe');
-          iframes.forEach(iframe => {
-            const src = iframe.getAttribute('src');
-            iframe.setAttribute('src', src);
-          });
-        }
-      }
-
-      // Sembunyikan semua sub-content ketika navigasi berubah
-      subContents.forEach(content => content.classList.remove('active'));
+      document.getElementById(target).classList.add('active');
     });
   });
 
-  // Tombol sub-menu di "homework"
+  // Sub content toggling
   const subButtons = document.querySelectorAll('.sub-btn');
   subButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const targetId = btn.getAttribute('data-sub');
-      const content = document.getElementById(targetId);
 
-      if (content) {
-        // Toggle aktif untuk sub konten
-        content.classList.toggle('active');
-      }
-
-      // Sembunyikan sub-content lain
-      subContents.forEach(otherContent => {
-        if (otherContent.id !== targetId) {
-          otherContent.classList.remove('active');
-        }
+      document.querySelectorAll('.sub-content').forEach(content => {
+        content.classList.remove('active');
       });
+
+      const content = document.getElementById(targetId);
+      if (content) content.classList.add('active');
     });
   });
 });
