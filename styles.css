@@ -7,153 +7,108 @@ body {
   overflow-x: hidden;
 }
 
-.section {
-  padding: 40px;
-  display: none;
-  transition: all 0.5s ease;
-}
-
-.section.active {
-  display: block;
-}
-
-.no-bg {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.fancy-text {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.5rem;
-  text-align: center;
-}
-
-.float-text {
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  padding: 0;
+  gap: 40px;
+  padding: 20px;
+  font-size: 1.2em;
 }
 
-nav ul li {
-  margin: 10px;
-}
-
-.nav-text {
+nav a {
   text-decoration: none;
   color: white;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding: 10px;
 }
 
-.button-container {
-  text-align: center;
-  margin: 20px 0;
+section {
+  padding: 60px 40px;
 }
 
-.sub-btn {
-  margin: 0 10px;
-  padding: 10px 20px;
-  background: white;
-  color: black;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.sub-content {
-  display: none;
-  margin-top: 20px;
-}
-
-.font-showcase {
+.media-wrapper {
   display: flex;
-  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
   justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.font-box {
-  width: 150px;
-  height: 100px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid white;
-  border-radius: 8px;
-  text-align: center;
-  padding: 10px;
-}
-
-.font-label {
-  font-size: 0.8rem;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.font-text {
-  font-size: 1.2rem;
-}
-
-/* Font styles */
-.font-arial .font-text { font-family: Arial, sans-serif; }
-.font-baskerville .font-text { font-family: 'Baskerville', serif; }
-.font-helvetica .font-text { font-family: Helvetica, sans-serif; }
-.font-georgia .font-text { font-family: Georgia, serif; }
-.font-garamond .font-text { font-family: Garamond, serif; }
-.font-caslon .font-text { font-family: 'Adobe Caslon Pro', serif; }
-.font-times .font-text { font-family: 'Times New Roman', serif; }
-.font-blackletter .font-text { font-family: 'UnifrakturCook', cursive; }
-.font-calligraphy .font-text { font-family: 'Dancing Script', cursive; }
-.font-comic .font-text { font-family: 'Comic Sans MS', cursive; }
-
-/* Media */
-.media-row {
-  display: flex;
   flex-wrap: wrap;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
   gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
-.media-box iframe {
-  width: 300px;
-  height: 170px;
-  border-radius: 10px;
+.button-group button {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 15px 25px;
   border: none;
+  border-radius: 12px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.album-cover {
-  width: 100px;
-  height: 100px;
-  background-image: url('https://i.scdn.co/image/ab67616d00001e0271d985bc37ac2be9b68f06b0');
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-  margin: 0 auto 10px;
-  animation: rotate 6s linear infinite;
+.button-group button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.font-grid {
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
-/* Bintang jatuh */
+.font-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(5px);
+}
+
+.font-name {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.floating {
+  text-align: center;
+  font-size: 2em;
+  animation: floatText 4s ease-in-out infinite;
+  margin-top: 100px;
+}
+
+@keyframes floatText {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.animated-title {
+  animation: pulse 2s infinite;
+  font-size: 2em;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Stars */
 .stars {
   position: fixed;
   width: 100%;
   height: 100%;
-  top: 0; left: 0;
-  overflow: hidden;
+  top: 0;
+  left: 0;
+  pointer-events: none;
   z-index: -1;
 }
 
@@ -162,11 +117,17 @@ nav ul li {
   width: 2px;
   height: 80px;
   background: white;
-  opacity: 0.5;
   animation: fall linear infinite;
+  opacity: 0.5;
 }
 
 @keyframes fall {
-  0% { transform: translateY(-100px); }
-  100% { transform: translateY(100vh); }
+  0% {
+    transform: translateY(-100px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
 }
