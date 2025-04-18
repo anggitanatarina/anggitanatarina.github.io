@@ -80,6 +80,7 @@ h1, h2, p {
   margin-top: 1rem;
 }
 
+/* Typewriter */
 .typewriter-text {
   overflow: hidden;
   border-right: 2px solid #fff;
@@ -102,6 +103,7 @@ h1, h2, p {
   50% { border-color: transparent; }
 }
 
+/* Media Row */
 .media-row {
   display: flex;
   flex-wrap: wrap;
@@ -128,6 +130,7 @@ h1, h2, p {
   border: none;
 }
 
+/* Album cover di atas iframe */
 .album-cover {
   position: absolute;
   top: -60px;
@@ -147,36 +150,4 @@ h1, h2, p {
 @keyframes spin {
   0% { transform: translateX(-50%) rotate(0deg); }
   100% { transform: translateX(-50%) rotate(360deg); }
-}
-
-/* Homework Submenu */
-.button-container {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-.sub-btn {
-  background-color: lightblue;
-  color: black;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.sub-btn:hover {
-  background-color: deepskyblue;
-  color: white;
-}
-
-.sub-content {
-  display: none;
-  margin-top: 20px;
-}
-
-.sub-content.active {
-  display: block;
-}
+} 
