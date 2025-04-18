@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Cursive', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   background: url('pexels-njeromin-18124007.jpg') no-repeat center center fixed;
   background-size: cover;
   color: white;
@@ -61,11 +61,21 @@ main {
   text-align: center;
 }
 
+.section.no-bg {
+  background: none;
+  padding: 20px 10px;
+}
+
 .section.active {
   display: block;
 }
 
-h1, h2, p {
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  text-shadow: 0 0 12px rgba(255,255,255,0.6);
+}
+
+p {
   text-shadow: 0 0 8px #fff;
 }
 
@@ -80,27 +90,17 @@ h1, h2, p {
   margin-top: 1rem;
 }
 
-/* Typewriter */
-.typewriter-text {
-  overflow: hidden;
-  border-right: 2px solid #fff;
-  white-space: nowrap;
-  width: 0;
-  margin: 0 auto;
-  animation:
-    typing 4s steps(60, end) forwards,
-    blink 0.7s step-end infinite;
-  font-size: 1.8rem;
-  max-width: 100%;
+.fancy-text {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  animation: fadeInScale 1.5s ease-out forwards;
 }
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* Media Row */
@@ -130,7 +130,6 @@ h1, h2, p {
   border: none;
 }
 
-/* Album cover di atas iframe */
 .album-cover {
   position: absolute;
   top: -60px;
@@ -150,4 +149,23 @@ h1, h2, p {
 @keyframes spin {
   0% { transform: translateX(-50%) rotate(0deg); }
   100% { transform: translateX(-50%) rotate(360deg); }
-} 
+}
+
+.sub-content {
+  display: none;
+  margin-top: 1rem;
+}
+
+.sub-content.active {
+  display: block;
+}
+
+.sub-btn {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: lightblue;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
