@@ -5,8 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>selenophile</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=EB+Garamond&family=UnifrakturCook&family=Playfair+Display:wght@600&family=Quicksand&display=swap" rel="stylesheet">
-  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=EB+Garamond&family=UnifrakturCook&family=Playfair+Display:wght@600&family=Quicksand&family=Orbitron&family=Roboto+Slab&display=swap" rel="stylesheet">
+  <style>
+    .font-section {
+      text-align: center;
+      padding: 2rem;
+      background-color: #111;
+      color: white;
+    }
+
+    .font-title {
+      font-size: 2rem;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px #000;
+    }
+
+    .font-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+      justify-items: center;
+    }
+
+    .font-card {
+      background-color: #555;
+      padding: 1.5rem;
+      border-radius: 15px;
+      color: white;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+    }
+
+    .font-card:hover {
+      transform: scale(1.05);
+      background-color: #666;
+    }
+  </style>
 </head>
 <body>
   <div class="stars"></div>
@@ -52,29 +92,26 @@
 
       <div id="uts" class="sub-content">
         <a href="UTS Sismul Anggita Natarina_.pdf" target="_blank" class="btn">Lihat Laporan UTS</a>
-        <div class="font-showcase">
-          <!-- Showcase Font Style 1 -->
-          <div class="font-box font-arial"><div class="font-label">Arial</div><div class="font-text">Selenophile</div></div>
-          <!-- Showcase Font Style 2 -->
-          <div class="font-box font-baskerville"><div class="font-label">Baskerville</div><div class="font-text">Selenophile</div></div>
-          <!-- Tambahan font lainnya -->
-        </div>
       </div>
 
       <div id="tugas" class="sub-content">
         <a href="tugas.html" target="_blank" class="btn">Lihat Tugas</a>
-        <div class="font-showcase">
-          <div><h3>Arial</h3><p style="font-family: Arial, sans-serif;">Selenophile</p></div>
-          <div><h3>Baskerville</h3><p style="font-family: 'Baskerville', serif;">Selenophile</p></div>
-          <div><h3>Helvetica</h3><p style="font-family: Helvetica, sans-serif;">Selenophile</p></div>
-          <div><h3>Georgia</h3><p style="font-family: Georgia, serif;">Selenophile</p></div>
-          <div><h3>Garamond</h3><p style="font-family: Garamond, serif;">Selenophile</p></div>
-          <div><h3>Caslon</h3><p style="font-family: 'Adobe Caslon Pro', serif;">Selenophile</p></div>
-          <div><h3>Times New Roman</h3><p style="font-family: 'Times New Roman', serif;">Selenophile</p></div>
-          <div><h3>Blackletter</h3><p style="font-family: 'Old English Text MT', serif;">Selenophile</p></div>
-          <div><h3>Calligraphy</h3><p style="font-family: 'Lucida Calligraphy', cursive;">Selenophile</p></div>
-          <div><h3>Comic Sans</h3><p style="font-family: 'Comic Sans MS', cursive;">Selenophile</p></div>
-        </div>
+
+        <section class="font-section">
+          <h2 class="font-title">10 Jenis Font Populer</h2>
+          <div class="font-grid">
+            <div class="font-card" style="font-family: 'Times New Roman', serif;">Serif</div>
+            <div class="font-card" style="font-family: Arial, sans-serif;">Sans Serif</div>
+            <div class="font-card" style="font-family: 'Roboto Slab', serif;">Slab Serif</div>
+            <div class="font-card" style="font-family: 'Dancing Script', cursive;">Script</div>
+            <div class="font-card" style="font-family: 'Orbitron', sans-serif;">Display</div>
+            <div class="font-card" style="font-family: 'Comic Sans MS', cursive;">Comic</div>
+            <div class="font-card" style="font-family: 'Stencil Std', fantasy;">Stencil</div>
+            <div class="font-card" style="font-family: 'Old English Text MT', serif;">Black Letter</div>
+            <div class="font-card" style="font-family: 'Courier New', monospace;">Typewriter</div>
+            <div class="font-card" style="font-family: Garamond, serif;">Garamond</div>
+          </div>
+        </section>
       </div>
     </section>
 
@@ -83,5 +120,25 @@
       <p>Kamu bisa menghubungiku lewat cahaya bulan 🌕</p>
     </section>
   </main>
+
+  <script>
+    document.querySelectorAll(".sub-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-sub");
+
+        document.querySelectorAll(".sub-content").forEach(content => {
+          content.style.display = "none";
+        });
+
+        document.getElementById(target).style.display = "block";
+      });
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".sub-content").forEach(content => {
+        content.style.display = "none";
+      });
+    });
+  </script>
 </body>
 </html>
