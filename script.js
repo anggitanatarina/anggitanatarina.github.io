@@ -23,22 +23,31 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = link.getAttribute('data-target');
 
       sections.forEach(section => section.classList.remove('active'));
-      document.getElementById(target).classList.add('active');
+
+      const targetSection = document.getElementById(target);
+      if (targetSection) {
+        targetSection.classList.add('active');
+
+        if (target === 'about') {
+          const iframe = targetSection.querySelector('iframe');
+          if (iframe) {
+            const src = iframe.getAttribute('src');
+            iframe.setAttribute('src', src);
+          }
+        }
+      }
     });
   });
 
-  // Sub content toggling
+  // Show sub-content in homework
   const subButtons = document.querySelectorAll('.sub-btn');
   subButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const targetId = btn.getAttribute('data-sub');
-
-      document.querySelectorAll('.sub-content').forEach(content => {
-        content.classList.remove('active');
-      });
-
       const content = document.getElementById(targetId);
-      if (content) content.classList.add('active');
+      if (content) {
+        content.classList.toggle('active');
+      }
     });
   });
 });
