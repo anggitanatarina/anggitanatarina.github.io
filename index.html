@@ -1,77 +1,95 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Selenophile</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=EB+Garamond&family=UnifrakturCook&family=Playfair+Display:wght@600&family=Quicksand&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selenophile Site</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="stars"></div>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#" class="nav-text" data-target="home">home</a></li>
-        <li><a href="#" class="nav-text" data-target="about">about</a></li>
-        <li><a href="#" class="nav-text" data-target="homework">homework</a></li>
-        <li><a href="#" class="nav-text" data-target="contact">contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav>
+    <ul>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#homework">HOMEWORK</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
 
-  <main>
-    <section id="home" class="section no-bg active">
-      <h1 class="fancy-text float-text">Thank you for visiting this website! 🌙</h1>
-    </section>
+  <section id="home">
+    <h1 class="floating">Thank you for visiting</h1>
+  </section>
 
-    <section id="about" class="section no-bg">
-      <h2>About</h2>
-      <p>Halo, aku selenophile 🌙</p>
-      <p>Mari bersama-sama menyaksikan keindahan bulan di malam hari ✨</p>
-      <p>Have a nice day yaa 🌌</p>
-      <div class="media-row">
-        <div class="media-box">
-          <iframe src="https://www.youtube.com/embed/_K2v-MmAj7E?playlist=_K2v-MmAj7E&loop=1&autoplay=1&mute=1" allowfullscreen></iframe>
-        </div>
-        <div class="media-box">
-          <div class="album-cover"></div>
-          <iframe src="https://open.spotify.com/embed/track/5QDLhrAOJJdNAmCTJ8xMyW?utm_source=generator" loading="lazy"></iframe>
-        </div>
+  <section id="about">
+    <h2 class="animated-title">About</h2>
+    <p>Halo, aku selenophile 🌙</p>
+    <p>Mari bersama-sama menyaksikan keindahan bulan di malam hari ✨</p>
+    <p>Have a nice day yaa 🧃</p>
+
+    <div class="media-wrapper">
+      <iframe width="350" height="200" src="https://www.youtube.com/embed/CuklIb9d3fI" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://open.spotify.com/embed/track/4uLU6hMCjMI75M1A2tKUQC" width="300" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+  </section>
+
+  <section id="homework">
+    <h2 class="animated-title">Homework</h2>
+    <div class="button-group">
+      <button onclick="showContent('uts')">UTS SISTEM MULTIMEDIA</button>
+      <button onclick="showContent('tugas')">TUGAS</button>
+    </div>
+
+    <div id="uts" class="uts-content">
+      <h3>Contoh Contoh Laporan</h3>
+      <p>(Tambahkan isi laporanmu di sini)</p>
+    </div>
+
+    <div id="tugas" class="font-grid">
+      <!-- Font cards -->
+      <div class="font-card" style="font-family: Arial">
+        <span class="font-name">Arial</span>
+        <p>selenophile</p>
       </div>
-    </section>
-
-    <section id="homework" class="section no-bg">
-      <h2 class="fancy-text">Homework</h2>
-      <div class="button-container">
-        <button class="sub-btn" data-sub="uts">Laporan UTS</button>
-        <button class="sub-btn" data-sub="tugas">Tugas</button>
+      <div class="font-card" style="font-family: Baskerville">
+        <span class="font-name">Baskerville</span>
+        <p>selenophile</p>
       </div>
-
-      <div id="uts" class="sub-content">
-        <a href="UTS Sismul Anggita Natarina_.pdf" target="_blank" class="btn">Lihat Laporan UTS</a>
+      <div class="font-card" style="font-family: Helvetica">
+        <span class="font-name">Helvetica</span>
+        <p>selenophile</p>
       </div>
-
-      <div id="tugas" class="sub-content font-showcase">
-        <div class="font-box font-arial"><div class="font-label">Arial</div><div class="font-text">Selenophile</div></div>
-        <div class="font-box font-baskerville"><div class="font-label">Baskerville</div><div class="font-text">Selenophile</div></div>
-        <div class="font-box font-helvetica"><div class="font-label">Helvetica</div><div class="font-text">Selenophile</div></div>
-        <div class="font-box font-georgia"><div class="font-label">Georgia</div><div class="font-text">Selenophile</div></div>
-        <div class="font-box font-garamond"><div class="font-label">Garamond</div><div class="font-text">Selenophile</div></div>
-        <div class="font-box font-caslon"><div class="font-label">Caslon</div><div class="font-text">Selenophile</div></div>
-        <div class="font-box font-times"><div class="font-label">Times New Roman</div><div class="font-text">Selenophile</div></div>
-        <div class="font-box font-blackletter"><div class="font-label">Blackletter</div><div class="font-text">Selenophile</div></div>
-        <div class="font-box font-calligraphy"><div class="font-label">Calligraphy</div><div class="font-text">Selenophile</div></div>
-        <div class="font-box font-comic"><div class="font-label">Comic Sans</div><div class="font-text">Selenophile</div></div>
+      <div class="font-card" style="font-family: Georgia">
+        <span class="font-name">Georgia</span>
+        <p>selenophile</p>
       </div>
-    </section>
-
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p>Kamu bisa menghubungiku lewat cahaya bulan 🌕</p>
-    </section>
-  </main>
+      <div class="font-card" style="font-family: Garamond">
+        <span class="font-name">Garamond</span>
+        <p>selenophile</p>
+      </div>
+      <div class="font-card" style="font-family: 'Caslon'">
+        <span class="font-name">Caslon</span>
+        <p>selenophile</p>
+      </div>
+      <div class="font-card" style="font-family: 'Times New Roman'">
+        <span class="font-name">Times New Roman</span>
+        <p>selenophile</p>
+      </div>
+      <div class="font-card" style="font-family: 'Old English Text MT'">
+        <span class="font-name">Blackletter</span>
+        <p>selenophile</p>
+      </div>
+      <div class="font-card" style="font-family: 'Brush Script MT'">
+        <span class="font-name">Calligraphy</span>
+        <p>selenophile</p>
+      </div>
+      <div class="font-card" style="font-family: Comic Sans MS">
+        <span class="font-name">Comic</span>
+        <p>selenophile</p>
+      </div>
+    </div>
+  </section>
 
   <script src="script.js"></script>
 </body>
