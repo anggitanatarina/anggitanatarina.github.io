@@ -1,23 +1,16 @@
 body {
   margin: 0;
   font-family: 'Quicksand', sans-serif;
-  color: #fff;
-  background: #0b0c1e;
+  background: url('pexels-njeromin-18124007.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
   overflow-x: hidden;
 }
 
-.stars {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  z-index: -1;
-}
-
 .section {
-  padding: 60px 20px;
+  padding: 40px;
   display: none;
-  text-align: center;
+  transition: all 0.5s ease;
 }
 
 .section.active {
@@ -25,56 +18,56 @@ body {
 }
 
 .no-bg {
-  background: transparent;
-}
-
-header nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-}
-
-.nav-text {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.nav-text:hover {
-  color: #e0b3ff;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .fancy-text {
   font-family: 'Dancing Script', cursive;
-  font-size: 2.5em;
-  animation: fadeIn 2s ease-in-out;
+  font-size: 2.5rem;
+  text-align: center;
 }
 
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(-20px); }
-  100% { opacity: 1; transform: translateY(0); }
+.float-text {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 10px;
+}
+
+.nav-text {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px;
 }
 
 .button-container {
+  text-align: center;
   margin: 20px 0;
 }
 
 .sub-btn {
-  padding: 10px 20px;
   margin: 0 10px;
-  background-color: #6a0dad;
+  padding: 10px 20px;
+  background: white;
+  color: black;
   border: none;
-  color: #fff;
-  border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.sub-btn:hover {
-  background-color: #8a2be2;
+  border-radius: 5px;
 }
 
 .sub-content {
@@ -86,24 +79,94 @@ header nav ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  margin-top: 30px;
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .font-box {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-  width: 180px;
-  box-shadow: 0 0 10px #000;
+  width: 150px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
 }
 
 .font-label {
-  font-size: 14px;
-  margin-bottom: 10px;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
   font-weight: bold;
 }
 
 .font-text {
-  font-size: 22px;
+  font-size: 1.2rem;
+}
+
+/* Font styles */
+.font-arial .font-text { font-family: Arial, sans-serif; }
+.font-baskerville .font-text { font-family: 'Baskerville', serif; }
+.font-helvetica .font-text { font-family: Helvetica, sans-serif; }
+.font-georgia .font-text { font-family: Georgia, serif; }
+.font-garamond .font-text { font-family: Garamond, serif; }
+.font-caslon .font-text { font-family: 'Adobe Caslon Pro', serif; }
+.font-times .font-text { font-family: 'Times New Roman', serif; }
+.font-blackletter .font-text { font-family: 'UnifrakturCook', cursive; }
+.font-calligraphy .font-text { font-family: 'Dancing Script', cursive; }
+.font-comic .font-text { font-family: 'Comic Sans MS', cursive; }
+
+/* Media */
+.media-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.media-box iframe {
+  width: 300px;
+  height: 170px;
+  border-radius: 10px;
+  border: none;
+}
+
+.album-cover {
+  width: 100px;
+  height: 100px;
+  background-image: url('https://i.scdn.co/image/ab67616d00001e0271d985bc37ac2be9b68f06b0');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  animation: rotate 6s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Bintang jatuh */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 80px;
+  background: white;
+  opacity: 0.5;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-100px); }
+  100% { transform: translateY(100vh); }
 }
