@@ -22,15 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const target = link.getAttribute('data-target');
 
-      // Sembunyikan semua section
       sections.forEach(section => section.classList.remove('active'));
 
-      // Tampilkan section yang diklik
       const targetSection = document.getElementById(target);
       if (targetSection) {
         targetSection.classList.add('active');
 
-        // Kalau section about, reload iframe biar autoplay jalan
         if (target === 'about') {
           const iframes = targetSection.querySelectorAll('iframe');
           iframes.forEach(iframe => {
@@ -38,28 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
             iframe.setAttribute('src', src);
           });
         }
-
-        // Reset isi submenu homework
-        if (target === 'homework') {
-          document.querySelectorAll('.sub-content').forEach(div => {
-            div.classList.remove('active');
-          });
-        }
-      }
-    });
-  });
-
-  // Tombol submenu di dalam homework
-  const subButtons = document.querySelectorAll('.sub-btn');
-  subButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const targetSub = button.getAttribute('data-sub');
-      document.querySelectorAll('.sub-content').forEach(div => {
-        div.classList.remove('active');
-      });
-      const targetContent = document.getElementById(targetSub);
-      if (targetContent) {
-        targetContent.classList.add('active');
       }
     });
   });
