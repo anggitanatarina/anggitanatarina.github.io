@@ -23,18 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = link.getAttribute('data-target');
 
       sections.forEach(section => section.classList.remove('active'));
-
       const targetSection = document.getElementById(target);
       if (targetSection) {
         targetSection.classList.add('active');
+      }
+    });
+  });
 
-        if (target === 'about') {
-          const iframes = targetSection.querySelectorAll('iframe');
-          iframes.forEach(iframe => {
-            const src = iframe.getAttribute('src');
-            iframe.setAttribute('src', src);
-          });
-        }
+  const subButtons = document.querySelectorAll('.sub-btn');
+  subButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-sub');
+      document.querySelectorAll('.sub-content').forEach(content => {
+        content.style.display = 'none';
+      });
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) {
+        targetContent.style.display = 'block';
       }
     });
   });
