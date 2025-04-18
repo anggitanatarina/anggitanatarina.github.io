@@ -6,6 +6,7 @@
   <title>selenophile</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=EB+Garamond&family=UnifrakturCook&family=Playfair+Display:wght@600&family=Quicksand&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <div class="stars"></div>
@@ -52,16 +53,11 @@
       <div id="uts" class="sub-content">
         <a href="UTS Sismul Anggita Natarina_.pdf" target="_blank" class="btn">Lihat Laporan UTS</a>
         <div class="font-showcase">
+          <!-- Showcase Font Style 1 -->
           <div class="font-box font-arial"><div class="font-label">Arial</div><div class="font-text">Selenophile</div></div>
+          <!-- Showcase Font Style 2 -->
           <div class="font-box font-baskerville"><div class="font-label">Baskerville</div><div class="font-text">Selenophile</div></div>
-          <div class="font-box font-helvetica"><div class="font-label">Helvetica</div><div class="font-text">Selenophile</div></div>
-          <div class="font-box font-georgia"><div class="font-label">Georgia</div><div class="font-text">Selenophile</div></div>
-          <div class="font-box font-garamond"><div class="font-label">Garamond</div><div class="font-text">Selenophile</div></div>
-          <div class="font-box font-caslon"><div class="font-label">Caslon</div><div class="font-text">Selenophile</div></div>
-          <div class="font-box font-times"><div class="font-label">Times New Roman</div><div class="font-text">Selenophile</div></div>
-          <div class="font-box font-blackletter"><div class="font-label">Blackletter</div><div class="font-text">Selenophile</div></div>
-          <div class="font-box font-calligraphy"><div class="font-label">Calligraphy</div><div class="font-text">Selenophile</div></div>
-          <div class="font-box font-comic"><div class="font-label">Comic Sans</div><div class="font-text">Selenophile</div></div>
+          <!-- Tambahan font lainnya -->
         </div>
       </div>
 
@@ -87,25 +83,5 @@
       <p>Kamu bisa menghubungiku lewat cahaya bulan 🌕</p>
     </section>
   </main>
-
-  <script>
-    document.querySelectorAll(".sub-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const target = btn.getAttribute("data-sub");
-
-        document.querySelectorAll(".sub-content").forEach(content => {
-          content.style.display = "none";
-        });
-
-        document.getElementById(target).style.display = "block";
-      });
-    });
-
-    window.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll(".sub-content").forEach(content => {
-        content.style.display = "none";
-      });
-    });
-  </script>
 </body>
 </html>
