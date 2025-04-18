@@ -22,31 +22,44 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const target = link.getAttribute('data-target');
 
+      // Sembunyikan semua section
       sections.forEach(section => section.classList.remove('active'));
 
+      // Tampilkan section yang diklik
       const targetSection = document.getElementById(target);
       if (targetSection) {
         targetSection.classList.add('active');
 
+        // Kalau section about, reload iframe biar autoplay jalan
         if (target === 'about') {
-          const iframe = targetSection.querySelector('iframe');
-          if (iframe) {
+          const iframes = targetSection.querySelectorAll('iframe');
+          iframes.forEach(iframe => {
             const src = iframe.getAttribute('src');
             iframe.setAttribute('src', src);
-          }
+          });
+        }
+
+        // Reset isi submenu homework
+        if (target === 'homework') {
+          document.querySelectorAll('.sub-content').forEach(div => {
+            div.classList.remove('active');
+          });
         }
       }
     });
   });
 
-  // Show sub-content in homework
+  // Tombol submenu di dalam homework
   const subButtons = document.querySelectorAll('.sub-btn');
-  subButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.getAttribute('data-sub');
-      const content = document.getElementById(targetId);
-      if (content) {
-        content.classList.toggle('active');
+  subButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetSub = button.getAttribute('data-sub');
+      document.querySelectorAll('.sub-content').forEach(div => {
+        div.classList.remove('active');
+      });
+      const targetContent = document.getElementById(targetSub);
+      if (targetContent) {
+        targetContent.classList.add('active');
       }
     });
   });
