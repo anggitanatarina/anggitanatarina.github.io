@@ -54,6 +54,69 @@ header nav ul {
   animation: fadeIn 2s ease-in-out;
 }
 
+/* === Galeri Gambar Format Populer === */
+.image-gallery {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.image-gallery h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  padding: 0 20px;
+}
+
+.gallery-item {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 15px;
+  width: 160px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.gallery-item p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  color: #f0f0f0;
+  margin: 0;
+}
+
+/* Optional: animasi muncul */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(-20px); }
   100% { opacity: 1; transform: translateY(0); }
