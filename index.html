@@ -5,52 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>selenophile</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=EB+Garamond&family=UnifrakturCook&family=Playfair+Display:wght@600&family=Quicksand&family=Orbitron&family=Roboto+Slab&display=swap" rel="stylesheet">
-  <style>
-    .font-section {
-      text-align: center;
-      padding: 2rem;
-      background-color: #111;
-      color: white;
-    }
-
-    .font-title {
-      font-size: 2rem;
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 2rem;
-      text-shadow: 2px 2px #000;
-    }
-
-    .font-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 1rem;
-      justify-items: center;
-    }
-
-    .font-card {
-      background-color: #555;
-      padding: 1.5rem;
-      border-radius: 15px;
-      color: white;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.2s ease;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100px;
-    }
-
-    .font-card:hover {
-      transform: scale(1.05);
-      background-color: #666;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <div class="stars"></div>
 
+  <!-- Navbar -->
   <header>
     <nav>
       <ul>
@@ -62,6 +23,7 @@
     </nav>
   </header>
 
+  <!-- Sections -->
   <main>
     <section id="home" class="section no-bg active">
       <h1 class="fancy-text">Thank you for visiting this website! 🌙</h1>
@@ -72,46 +34,45 @@
       <p>Halo, aku selenophile 🌙</p>
       <p>Mari bersama-sama menyaksikan keindahan bulan di malam hari ✨</p>
       <p>Have a nice day yaa 🌌</p>
+
       <div class="media-row">
+        <!-- Video -->
         <div class="media-box">
-          <iframe src="https://www.youtube.com/embed/_K2v-MmAj7E?playlist=_K2v-MmAj7E&loop=1&autoplay=1&mute=1" allowfullscreen></iframe>
+          <iframe 
+            src="https://www.youtube.com/embed/_K2v-MmAj7E?playlist=_K2v-MmAj7E&loop=1&autoplay=1&mute=1" 
+            title="YouTube video" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
         </div>
+
+        <!-- Audio -->
         <div class="media-box">
           <div class="album-cover"></div>
-          <iframe src="https://open.spotify.com/embed/track/5QDLhrAOJJdNAmCTJ8xMyW?utm_source=generator" loading="lazy"></iframe>
+          <iframe 
+            src="https://open.spotify.com/embed/track/5QDLhrAOJJdNAmCTJ8xMyW?utm_source=generator" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+          </iframe>
         </div>
       </div>
     </section>
 
     <section id="homework" class="section no-bg">
       <h2 class="fancy-text">Homework</h2>
+
       <div class="button-container">
         <button class="sub-btn" data-sub="uts">Laporan UTS</button>
-        <button class="sub-btn" data-sub="tugas">Tugas</button>
       </div>
-
       <div id="uts" class="sub-content">
         <a href="UTS Sismul Anggita Natarina_.pdf" target="_blank" class="btn">Lihat Laporan UTS</a>
       </div>
 
+      <div class="button-container">
+        <button class="sub-btn" data-sub="tugas">Tugas</button>
+      </div>
       <div id="tugas" class="sub-content">
         <a href="tugas.html" target="_blank" class="btn">Lihat Tugas</a>
-
-        <section class="font-section">
-          <h2 class="font-title">10 Jenis Font Populer</h2>
-          <div class="font-grid">
-            <div class="font-card" style="font-family: 'Times New Roman', serif;">Serif</div>
-            <div class="font-card" style="font-family: Arial, sans-serif;">Sans Serif</div>
-            <div class="font-card" style="font-family: 'Roboto Slab', serif;">Slab Serif</div>
-            <div class="font-card" style="font-family: 'Dancing Script', cursive;">Script</div>
-            <div class="font-card" style="font-family: 'Orbitron', sans-serif;">Display</div>
-            <div class="font-card" style="font-family: 'Comic Sans MS', cursive;">Comic</div>
-            <div class="font-card" style="font-family: 'Stencil Std', fantasy;">Stencil</div>
-            <div class="font-card" style="font-family: 'Old English Text MT', serif;">Black Letter</div>
-            <div class="font-card" style="font-family: 'Courier New', monospace;">Typewriter</div>
-            <div class="font-card" style="font-family: Garamond, serif;">Garamond</div>
-          </div>
-        </section>
       </div>
     </section>
 
@@ -121,24 +82,6 @@
     </section>
   </main>
 
-  <script>
-    document.querySelectorAll(".sub-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const target = btn.getAttribute("data-sub");
-
-        document.querySelectorAll(".sub-content").forEach(content => {
-          content.style.display = "none";
-        });
-
-        document.getElementById(target).style.display = "block";
-      });
-    });
-
-    window.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll(".sub-content").forEach(content => {
-        content.style.display = "none";
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
