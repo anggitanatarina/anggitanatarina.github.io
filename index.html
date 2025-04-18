@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>selenophile</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Selenophile</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=EB+Garamond&family=Playfair+Display:wght@600&family=Quicksand&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <!-- Bintang -->
   <div class="stars"></div>
 
-  <!-- Navbar -->
   <header>
     <nav>
       <ul>
@@ -23,53 +21,81 @@
     </nav>
   </header>
 
-  <!-- Konten -->
   <main>
-    <section id="home" class="section active">
-      <h1 class="typewriter-text">Thank you for visiting this website! .</h1>
+    <section id="home" class="section no-bg active">
+      <h1 class="fancy-text">Thank you for visiting this website! 🌙</h1>
     </section>
 
-    <section id="about" class="section">
+    <section id="about" class="section no-bg">
       <h2>About</h2>
       <p>Halo, aku selenophile 🌙</p>
       <p>Mari bersama-sama menyaksikan keindahan bulan di malam hari ✨</p>
       <p>Have a nice day yaa 🌌</p>
+    </section>
 
-      <div class="media-row">
-        <!-- Video -->
-        <div class="media-box">
-          <iframe 
-            src="https://www.youtube.com/embed/_K2v-MmAj7E?playlist=_K2v-MmAj7E&loop=1&autoplay=1&mute=1" 
-            title="YouTube video" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
-        </div>
+    <section id="homework" class="section no-bg">
+      <h2 class="fancy-text">Homework</h2>
+      <div class="button-container">
+        <button class="sub-btn" data-sub="uts">Laporan UTS</button>
+        <button class="sub-btn" data-sub="tugas">Tugas</button>
+      </div>
 
-        <!-- Audio -->
-        <div class="media-box">
-          <div class="album-cover"></div>
-          <iframe 
-            src="https://open.spotify.com/embed/track/5QDLhrAOJJdNAmCTJ8xMyW?utm_source=generator" 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-            loading="lazy">
-          </iframe>
+      <div id="uts" class="sub-content">
+        <a href="UTS Sismul Anggita Natarina_.pdf" target="_blank" class="btn">Lihat Laporan UTS</a>
+      </div>
+
+      <div id="tugas" class="sub-content">
+        <div class="font-showcase">
+          <div class="font-box" style="font-family: Arial, sans-serif;">
+            <div class="font-label">Arial</div>
+            <div class="font-text">selenophile</div>
+          </div>
+          <div class="font-box" style="font-family: 'Baskerville', serif;">
+            <div class="font-label">Baskerville</div>
+            <div class="font-text">selenophile</div>
+          </div>
+          <div class="font-box" style="font-family: Helvetica, sans-serif;">
+            <div class="font-label">Helvetica</div>
+            <div class="font-text">selenophile</div>
+          </div>
+          <div class="font-box" style="font-family: Georgia, serif;">
+            <div class="font-label">Georgia</div>
+            <div class="font-text">selenophile</div>
+          </div>
+          <div class="font-box" style="font-family: Garamond, serif;">
+            <div class="font-label">Garamond</div>
+            <div class="font-text">selenophile</div>
+          </div>
+          <div class="font-box" style="font-family: 'Adobe Caslon Pro', serif;">
+            <div class="font-label">Caslon</div>
+            <div class="font-text">selenophile</div>
+          </div>
+          <div class="font-box" style="font-family: 'Times New Roman', serif;">
+            <div class="font-label">Times New Roman</div>
+            <div class="font-text">selenophile</div>
+          </div>
+          <div class="font-box" style="font-family: 'Old English Text MT', serif;">
+            <div class="font-label">Blackletter</div>
+            <div class="font-text">selenophile</div>
+          </div>
+          <div class="font-box" style="font-family: 'Lucida Calligraphy', cursive;">
+            <div class="font-label">Calligraphy</div>
+            <div class="font-text">selenophile</div>
+          </div>
+          <div class="font-box" style="font-family: 'Comic Sans MS', cursive;">
+            <div class="font-label">Comic Sans</div>
+            <div class="font-text">selenophile</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="homework" class="section">
-      <a href="UTS Sismul Anggita Natarina_.pdf" target="_blank" class="btn">Laporan UTS</a>
-       <a href=target="_blank" class="btn">Tugas</a>
-    </section>
-
-    <section id="contact" class="section">
+    <section id="contact" class="section no-bg">
       <h2>Contact</h2>
       <p>Kamu bisa menghubungiku lewat cahaya bulan 🌕</p>
     </section>
   </main>
 
-  <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
