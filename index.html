@@ -17,6 +17,7 @@
         <li><a href="#" class="nav-text" data-target="home">home</a></li>
         <li><a href="#" class="nav-text" data-target="about">about</a></li>
         <li><a href="#" class="nav-text" data-target="homework">homework</a></li>
+        <li><a href="#" class="nav-text" data-target="explore">explore</a></li>
         <li><a href="#" class="nav-text" data-target="contact">contact</a></li>
       </ul>
     </nav>
@@ -35,16 +36,22 @@
       <p>Have a nice day yaa 🌌</p>
 
       <div class="media-row">
+        <!-- Video -->
         <div class="media-box">
           <iframe 
             src="https://www.youtube.com/embed/_K2v-MmAj7E?playlist=_K2v-MmAj7E&loop=1&autoplay=1&mute=1" 
-            title="YouTube video" allowfullscreen>
+            title="YouTube video" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
           </iframe>
         </div>
+
+        <!-- Audio -->
         <div class="media-box">
           <div class="album-cover"></div>
           <iframe 
-            src="https://open.spotify.com/embed/track/5QDLhrAOJJdNAmCTJ8xMyW?utm_source=generator"
+            src="https://open.spotify.com/embed/track/5QDLhrAOJJdNAmCTJ8xMyW?utm_source=generator" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
             loading="lazy">
           </iframe>
         </div>
@@ -52,19 +59,7 @@
     </section>
 
     <section id="homework" class="section">
-      <h2>Homework</h2>
-      <div class="button-container">
-        <button class="sub-btn" data-sub="uts">Laporan UTS</button>
-        <button class="sub-btn" data-sub="tugas">Tugas</button>
-      </div>
-
-      <div id="uts" class="sub-content">
-        <a href="UTS Sismul Anggita Natarina_.pdf" target="_blank" class="btn">Lihat Laporan UTS</a>
-      </div>
-
-      <div id="tugas" class="sub-content">
-        <a href="tugas.html" target="_blank" class="btn">Lihat Tugas</a>
-      </div>
+      <a href="UTS Sismul Anggita Natarina_.pdf" target="_blank" class="btn">Laporan UTS</a>
     </section>
 
     <section id="contact" class="section">
@@ -73,6 +68,28 @@
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    document.querySelectorAll('.nav-text').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('data-target');
+        document.querySelectorAll('.section').forEach(section => {
+          section.classList.remove('active');
+        });
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.classList.add('active');
+          if (targetId === 'about') {
+            const iframes = targetSection.querySelectorAll('iframe');
+            iframes.forEach(iframe => {
+              const src = iframe.getAttribute('src');
+              iframe.setAttribute('src', src);
+            });
+          }
+        }
+      });
+    });
+  </script>
+
 </body>
-</html>
+</html> 
