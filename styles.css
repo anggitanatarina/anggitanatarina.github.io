@@ -191,100 +191,67 @@ h2 {
   transition: 0.3s ease;
 }
 
-.sub-content a.btn:hover {
-  background: rgba(255,255,255,0.3);
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  margin: 40px 0 20px;
+  color: #fff;
 }
 
-
-.font-showcase {
+.box-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 20px;
-  margin-top: 30px;
-  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .font-box {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 15px;
-  border-radius: 15px;
-  width: 140px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
+  padding: 10px;
 }
 
 .font-box:hover {
   transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-.font-label {
-  font-size: 0.9em;
-  margin-bottom: 5px;
-  color: #aaa;
-}
-
-.font-text {
-  font-size: 1.5em;
-  color: white;
-}
-
-
-.gallery-title {
-  text-align: center;
-  font-size: 2rem;
-  margin: 40px 0 20px;
-  font-family: 'Playfair Display', serif;
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 10px;
-}
-
-.image-card {
+.image-box {
   background-color: rgba(255, 255, 255, 0.06);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-}
-
-.image-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-}
-
-.image-label {
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 12px;
-  font-weight: bold;
   text-align: center;
-  font-size: 1rem;
-  letter-spacing: 1px;
+  color: white;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
 }
 
-.image-card img {
+.image-box img {
   width: 100%;
-  height: auto;
+  height: 120px;
+  object-fit: cover;
   display: block;
-  filter: contrast(1.05) brightness(1.1);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.image-box p {
+  margin: 10px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: rgba(0,0,0,0.7);
+  padding: 6px 0;
 }
 
+.image-box:hover {
+  transform: scale(1.05);
+}
