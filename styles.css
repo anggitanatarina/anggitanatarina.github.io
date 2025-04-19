@@ -292,39 +292,34 @@ h2 {
 }
 
 
-/* SECTION JUDUL */
-.section-title {
+.video-showcase {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.video-title {
   font-family: 'Playfair Display', serif;
   font-size: 2.8rem;
   color: white;
   margin-bottom: 40px;
   text-shadow: 2px 2px #000;
-  text-align: center;
-}
-
-/* LAYOUT GRID VIDEO */
-.video-showcase {
-  padding: 60px 20px;
-  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-items: center;
 }
 
 .video-box {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.07);
   padding: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  backdrop-filter: blur(4px);
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
 }
 
@@ -334,34 +329,15 @@ h2 {
 
 .video-box video {
   width: 100%;
-  border-radius: 10px;
-  max-height: 180px;
+  height: auto;
+  border-radius: 12px;
 }
 
 .video-box p {
   margin-top: 10px;
   color: #fff;
-  font-size: 1.1rem;
   font-weight: 600;
+  font-size: 1.1rem;
   font-family: 'Quicksand', sans-serif;
   text-shadow: 1px 1px #000;
-}
-
-/* RESPONSIF */
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2.2rem;
-  }
-  .video-box video {
-    max-height: 160px;
-  }
-}
-
-@media (max-width: 480px) {
-  .section-title {
-    font-size: 1.8rem;
-  }
-  .video-box video {
-    max-height: 140px;
-  }
 }
