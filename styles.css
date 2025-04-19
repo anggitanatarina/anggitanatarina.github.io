@@ -290,4 +290,64 @@ h2 {
 .audio-box:hover {
   transform: scale(1.05);
 }
+.video-showcase {
+  padding: 40px 20px;
+  background-color: #111;
+  text-align: center;
+}
+
+.video-showcase h2 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.video-box {
+  background-color: #333;
+  padding: 15px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.video-box video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.video-box p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .video-showcase h2 {
+    font-size: 2rem;
+  }
+  .video-box {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-showcase h2 {
+    font-size: 1.8rem;
+  }
+  .video-grid {
+    gap: 15px;
+  }
+}
+
 
