@@ -290,54 +290,73 @@ h2 {
 .audio-box:hover {
   transform: scale(1.05);
 }
+
+
+/* === VIDEO SHOWCASE SECTION === */
 .video-showcase {
-  padding: 40px 20px;
   background-color: #111;
+  padding: 50px 20px;
   text-align: center;
 }
 
 .video-showcase h2 {
-  font-size: 2.5rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
   color: white;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px #000;
 }
 
+/* GRID RESPONSIF UNTUK VIDEO */
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  justify-items: center;
+  justify-content: center;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .video-box {
-  background-color: #333;
-  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
-  width: 100%;
-  max-width: 300px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease;
+}
+
+.video-box:hover {
+  transform: translateY(-5px);
 }
 
 .video-box video {
   width: 100%;
-  height: auto;
   border-radius: 10px;
+  max-height: 180px;
 }
 
 .video-box p {
   margin-top: 10px;
-  font-size: 1.2rem;
-  color: white;
-  font-weight: bold;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Quicksand', sans-serif;
+  text-shadow: 1px 1px #000;
 }
 
-/* Responsive */
+/* === RESPONSIF === */
 @media (max-width: 768px) {
   .video-showcase h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
-  .video-box {
-    max-width: 90%;
+
+  .video-box video {
+    max-height: 160px;
   }
 }
 
@@ -345,8 +364,9 @@ h2 {
   .video-showcase h2 {
     font-size: 1.8rem;
   }
-  .video-grid {
-    gap: 15px;
+
+  .video-box video {
+    max-height: 140px;
   }
 }
 
