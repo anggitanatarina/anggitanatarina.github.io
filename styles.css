@@ -292,28 +292,26 @@ h2 {
 }
 
 
-/* === VIDEO SHOWCASE SECTION === */
-.video-showcase {
-  background-color: #111;
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.video-showcase h2 {
+/* SECTION JUDUL */
+.section-title {
   font-family: 'Playfair Display', serif;
   font-size: 2.8rem;
   color: white;
   margin-bottom: 40px;
   text-shadow: 2px 2px #000;
+  text-align: center;
 }
 
-/* GRID RESPONSIF UNTUK VIDEO */
+/* LAYOUT GRID VIDEO */
+.video-showcase {
+  padding: 60px 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  justify-content: center;
-  align-items: start;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -349,25 +347,21 @@ h2 {
   text-shadow: 1px 1px #000;
 }
 
-/* === RESPONSIF === */
+/* RESPONSIF */
 @media (max-width: 768px) {
-  .video-showcase h2 {
+  .section-title {
     font-size: 2.2rem;
   }
-
   .video-box video {
     max-height: 160px;
   }
 }
 
 @media (max-width: 480px) {
-  .video-showcase h2 {
+  .section-title {
     font-size: 1.8rem;
   }
-
   .video-box video {
     max-height: 140px;
   }
 }
-
-
