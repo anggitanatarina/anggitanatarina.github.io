@@ -229,6 +229,63 @@ h2 {
   color: white;
 }
 
+#font-showcase {
+  margin: 60px 20px;
+  text-align: center;
+}
+
+#font-showcase h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.font-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.font-card {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 16px;
+  padding: 20px;
+  color: white;
+  min-width: 180px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  transition: transform 0.3s;
+}
+
+.font-card:hover {
+  transform: scale(1.05);
+}
+
+.font-name {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+.font-text {
+  font-size: 1.5rem;
+}
+
+/* Responsive tweaks */
+@media (min-width: 768px) {
+  .font-card {
+    min-width: 220px;
+    padding: 24px;
+  }
+  .font-text {
+    font-size: 2rem;
+  }
+}
+
+
 /* === Galeri Format Gambar === */
 .section-subtitle {
   font-family: 'Playfair Display', serif;
@@ -239,52 +296,63 @@ h2 {
   animation: fadeInUp 1s ease;
 }
 
-.image-format-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 20px;
-  justify-items: center;
-  padding: 30px 20px;
-  margin-top: 30px;
-}
-
-.format-box {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 10px;
-  border-radius: 15px;
+#image-gallery {
+  margin: 60px 20px;
   text-align: center;
-  width: 140px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
 }
 
-.format-box:hover {
+#image-gallery h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.image-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 12px;
+  min-width: 180px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  color: white;
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.image-card:hover {
   transform: scale(1.05);
 }
 
-.format-box img {
+.image-card img {
   width: 100%;
-  height: auto;
+  max-height: 150px;
+  object-fit: contain;
   border-radius: 10px;
-  margin-bottom: 10px;
 }
 
-.format-box p {
-  color: white;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 14px;
-  margin: 0;
+.format-name {
+  margin-top: 10px;
+  font-size: 1rem;
+  opacity: 0.8;
 }
 
-/* === Responsif Mobile === */
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
+/* Responsive tweak */
+@media (min-width: 768px) {
+  .image-card {
+    min-width: 220px;
   }
-
-  .font-showcase,
-  .image-format-gallery {
-    grid-template-columns: repeat(2, 1fr);
+  .format-name {
+    font-size: 1.1rem;
   }
 }
+
+ 
